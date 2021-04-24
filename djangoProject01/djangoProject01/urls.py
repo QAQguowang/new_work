@@ -1,4 +1,4 @@
-"""chapter_01 URL Configuration
+"""djangoProject01 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import testdb
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('testdb/', testdb.testdb),
 ]
