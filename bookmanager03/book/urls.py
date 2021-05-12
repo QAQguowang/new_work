@@ -1,6 +1,6 @@
 from django.urls import path
 from django.urls.converters import register_converter
-from book.views import index, shop, register, body_request, get_mobile, response
+from book.views import *
 
 #定义转换器
 class MobileCoverter:
@@ -23,4 +23,8 @@ urlpatterns = [
     path('res/', response),
     #使用转换器
     path('<mobile_number:mobile>/', get_mobile),
+    path('set_cookie/', set_cookie),
+    path('get_cookie/', get_cookie),
+    path('set_session/', set_session),
+    path('get_session/', get_session),
 ]
