@@ -20,11 +20,13 @@ class Link(models.Model):
                                          verbose_name='权重',
                                          help_text='权重高展示顺序靠前')
     owner = models.ForeignKey(User, verbose_name='作者', default='', on_delete=models.CASCADE)
-    create_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+    created_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
 
     class Meta:
         verbose_name = verbose_name_plural = '友情链接'
 
+    def __str__(self):
+        return self.title
 
 class SideBar(models.Model):
     # 侧边栏
@@ -49,3 +51,6 @@ class SideBar(models.Model):
 
     class Meta:
         verbose_name = verbose_name_plural = '侧边栏'
+
+    def __str__(self):
+        return self.title
