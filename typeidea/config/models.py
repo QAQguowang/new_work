@@ -28,6 +28,7 @@ class Link(models.Model):
     def __str__(self):
         return self.title
 
+
 class SideBar(models.Model):
     # 侧边栏
     STATUS_SHOW = 1

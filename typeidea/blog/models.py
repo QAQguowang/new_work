@@ -26,6 +26,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
 class Tag(models.Model):
     # 标签
     STATUS_NORMAL = 1
@@ -46,6 +47,7 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Post(models.Model):
     # 文章
