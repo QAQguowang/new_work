@@ -94,10 +94,10 @@ class PostAdmin(BaseOwnerAdmin):
                 'content',
             )
         }),
-        ('额外信息', {
-            'classes': ('collapse',),
-            'fields': ('tag',),
-        }),
+       # ('额外信息', {
+        #    'classes': ('collapse',),
+         #   'fields': ('tag',),
+       # }),
     )
 
     # 字段横向展示
