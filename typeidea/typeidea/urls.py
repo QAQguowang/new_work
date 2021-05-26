@@ -17,7 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 
-from blog.views import post_list, post_detail
+from blog.views import PostDetailView, PostListView
 from config.views import links
 from typeidea.custom_site import custom_site
 
@@ -25,11 +25,11 @@ from typeidea.custom_site import custom_site
 
 
 urlpatterns = [
-    url(r'^$', post_list),
-    url(r'^category/(?P<category_id>\d+)/$', post_list),
-    url(r'^tag/(?P<tag_id>\d+)/$', post_list),
-    url(r'^post/(?P<post_id>\d+).html$', post_detail),
-    url(r'^links/$', links),
-    url(r'^super_admin/', admin.site.urls),
-    url(r'^admin/', custom_site.urls),
+    url(r'^$', PostListView.as_view(), name='index'),
+    url(r'^category/(?P<category_id>\d+)/$', PostListView.as_view(), name='category-list'),
+    url(r'^tag/(?P<tag_id>\d+)/$', PostListView.as_view(), name='tag-list'),
+    url(r'^post/(?P<pk>\d+).html$', PostDetailView.as_view(), name='post-detail'),
+    url(r'^links/$', links, name='links'),
+    url(r'^super_admin/', admin.site.urls, name='super-admin'),
+    url(r'^admin/', custom_site.urls, name='admin'),
 ]
