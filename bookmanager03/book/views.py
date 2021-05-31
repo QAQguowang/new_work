@@ -5,6 +5,8 @@ import re
 
 
 # Create your views here.
+from django.views import View
+
 
 def index(request):
     return HttpResponse('ok')
@@ -78,3 +80,8 @@ def get_session(request):
     content = '{},{}'.format(user_id, user_name)
     return HttpResponse(content)
 
+class LoginView(View):
+    def get(self, request):
+        return HttpResponse('get')
+    def post(self, request):
+        return HttpResponse('post')
