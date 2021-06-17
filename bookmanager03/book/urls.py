@@ -27,4 +27,5 @@ urlpatterns = [
     path('get_cookie/', get_cookie),
     path('set_session/', set_session),
     path('get_session/', get_session),
+    path('login/', LoginView.as_view()),
 ]
